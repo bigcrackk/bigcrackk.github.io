@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>零元购</title>
+		<script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			a{
+				font-size: 13px;
+				color:black;
+				font-family: "微软雅黑";
+				text-decoration:none;
+			}
+			#mon{
+				margin: 0 auto;
+				width: 1003px;
+				height: 190px;
+			}
+			#mon p{
+				margin-top: -191px;
+				margin-left: 992px;
+			}
+			#qg{
+				width: 1003px;
+				height: 700px;
+				margin: 0 auto;
+				margin-top: 20px;
+				border: 1px solid red;
+				border-bottom: 0px;
+			}
+			#qg .lb{
+				font-family: "微软雅黑";
+				font-size: 17px;
+				font-weight: bolder;
+			}
+			#qg .jj{
+				color: #C4C4C4;
+				font-size: 13px;
+			}
+			#qg .tg{
+				color: red;
+				font-size: 20px;
+				font-family: "微软雅黑";
+				font-weight: bolder;
+			}
+			#qg ul{
+				margin-left: 2px;
+				padding: 16px;
+				float: left;
+				width: 300px;
+				height: 300px;
+			}
+			#qg p{
+				margin: 0 auto;
+				text-align: center;
+			}
+			#qg .cy{
+				background-color:#CCCCCC;
+				width: 300px;
+				height: 20px;
+				border: 1px solid #CCCCCC;
+			}
+		</style>
+	</head>
+	<body>
+		<iframe src="title.html" width="100%" height="127" frameborder="no" 
+			scrolling="no">
+		</iframe>
+		<div id="mon">
+			<img src="img/tgg1.jpg"/>
+			<p><input type="button" id="btn" value="×" /></p>
+		</div>
+		<div id="qg">
+			<ul>
+				<li class="mc"><img src="img/tg01.jpg"/></li>
+				<li class="lb">[全国联保]德国2日游</li>
+				<li class="jj">简介:德国是一个中欧联邦会议共和制度...</li>
+				<li class="jj"><a class="tg">团价:￥8888</a>&nbsp;&nbsp;&nbsp;原价:￥12348</li>
+				<li class="cy">已有2人参与</li>
+			</ul>
+			<ul>
+				<li class="mc"><img src="img/tg02.jpg"/></li>
+				<li class="lb">[全国联保]希腊3日游</li>
+				<li class="jj">简介:希腊被誉为是西方文化的发源地...</li>
+				<li class="jj"><a class="tg">团价:￥9878</a>&nbsp;&nbsp;&nbsp;原价:￥12129</li>
+				<li class="cy">已有89人参与</li>
+			</ul>
+			<ul>
+				<li class="mc"><img src="img/tg03.jpg"/></li>
+				<li class="lb">[全国联保]约旦2日游</li>
+				<li class="jj">简介:约旦位于亚洲西部,阿拉伯半岛的...</li>
+				<li class="jj"><a class="tg">团价:￥15000</a>&nbsp;&nbsp;&nbsp;原价:￥20000</li>
+				<li class="cy">已有829人参与</li>
+			</ul>
+			<ul>
+				<li class="mc"><img src="img/tg04.jpg"/></li>
+				<li class="lb">[全国联保]仰光2日游</li>
+				<li class="jj">简介:仰光,为缅甸最大的城市也是仰光省...</li>
+				<li class="jj"><a class="tg">团价:￥5000</a>&nbsp;&nbsp;&nbsp;原价:￥10000</li>
+				<li class="cy">已有23人参与</li>
+			</ul>
+			<ul>
+				<li class="mc"><img src="img/tg05.jpg"/></li>
+				<li class="lb">[全国联保]法国3日游</li>
+				<li class="jj">简介:在花都巴黎感受万种风情...</li>
+				<li class="jj"><a class="tg">团价:￥4529</a>&nbsp;&nbsp;&nbsp;原价:￥7000</li>
+				<li class="cy">已有450人参与</li>
+			</ul>
+			<ul>
+				<li class="mc"><img src="img/tg06.jpg"/></li>
+				<li class="lb">[全国联保]加拿大3日游</li>
+				<li class="jj">简介:加拿大最受欢迎旅游路线,赏加国"枫"情...</li>
+				<li class="jj"><a class="tg">团价:￥10001</a>&nbsp;&nbsp;&nbsp;原价:￥15000</li>
+				<li class="cy">已有268人参与</li>
+			</ul>
+
+			<p><a href="home page.html">首页</a>|上一页|下一页|尾页</p>
+		</div>
+		<iframe src="foot.html" width="100%" height="100"frameborder="no"scrolling="no"></iframe>
+		<script type="text/javascript">
+				$(function(){
+				$("#btn").click(function(){
+					if($(this).val()=="显示"){
+						$("#mon").fadeIn(1000,function(){
+							$("#mon img").css("border","5px solid red");
+						})
+						$(this).val("隐藏");
+					}else{
+						$("#mon").fadeOut(1000);
+						$(this).val("×");
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

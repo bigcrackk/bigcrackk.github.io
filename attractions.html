@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style-type: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			#content{
+				width: 1003px;
+				height: 1306px;
+				margin: 5px auto;
+			}
+			#content #c1{
+				width: 1003px;
+				height: 310px;
+			}
+			#c1 #hot{
+				border: 1px solid lightgray;
+				float: left;
+				width: 200px;
+				height: 300px;
+				background-image: url(img/dj.jpg);
+			}
+			#c1 #hot ul{
+				width: 160px;
+				background-color: ;
+				padding-top: 40px;
+				padding-left: 25px;
+			}
+			#c1 #hot ul li{
+				height: 23px;
+			}
+			#c1 #hot ul li:nth-of-type(odd) a{
+				font-size: 15px;
+				font-weight: bold;
+				color: blue;
+			}
+			#c1 #hot ul li:nth-of-type(even) a{
+				font-size: 13px;
+				color: black;
+			}
+			#c1 #roll{
+				float: left;
+				margin-left: 21px;
+				width: 760px;
+				height: 300px;
+			}
+			#roll #picList{
+				width: 780px;
+				height: 265px;
+				cursor: pointer;
+				overflow: hidden;
+				float: left;
+			}
+			#roll #picList li{
+				width: 780px;
+				height: 265px;
+				float: left;
+			}
+			#roll #picList li img{
+				width: 780px;
+				height: 265px;
+			}
+			#roll #picNo{
+				width: 780px;
+				height: 35px;
+			}
+			#roll #picNo li{
+				width: 77px;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+				float: left;
+				cursor: pointer;
+				background-color: black;
+			}
+			#roll #picNo li:not(:first-child){
+				margin-left:1px;
+			}
+			#roll #picNo li a{
+				color: white;
+				font-size: 13px;
+				font-weight: bold;
+			}
+			#content #c2{
+				height: 335px;
+			}
+			#c2 #zx{
+				height: 33px;
+				line-height: 33px;
+				background-image: url(img/zx.jpg);
+				background-repeat: no-repeat;
+				padding-left: 35px;
+				font-size: 16px;
+				border-bottom: 3px solid darkgray;
+			}
+			#c2 #zx1{
+				height: 290px;
+			}
+			#c2 #zx1 img{
+				width: 180px;
+				height: 120px;
+			}
+			#c2 #zx1 ul li{
+				margin-top: 10px;
+				margin-left: 15px;
+				width: 180px;
+				height: 130px;
+				font-size: 5px;
+				color: darkgray;
+				float: left;
+			}
+			#content #c3{
+				height: 170px;
+			}
+			#c3 #sdf{
+				height: 33px;
+				line-height: 33px;
+				background-image: url(img/sdf.jpg);
+				background-repeat: no-repeat;
+				padding-left: 35px;
+				font-size: 16px;
+				border-bottom: 3px solid darkgray;
+			}
+			#c3 #sdf1 ul li:nth-of-type(odd) img{
+				width: 158px;
+				height: 113px;
+			}
+			#c3 #sdf1 ul li{
+				margin-top: 10px;
+				float: left;
+				font-size: 10px;
+			}
+			#c3 #sdf1 ul li:nth-of-type(odd){
+				margin-left: 12px;
+			}
+			#c3 #sdf1 ul li:nth-of-type(even){
+				width: 158px;
+				background-color: #f5f5f5;
+				height: 113px;
+			}
+			#sdf1 ul li p{
+				margin-left: 7px;
+			}
+			#sdf1 ul li p:first{
+				margin-top: 3px;
+			}
+			#sdf1 ul li p:nth-child(2){
+				color: gray;
+				height: 25px;
+				margin-top: 15px;
+			}
+			#sdf1 ul li a{
+				font-size: 16px;
+				color: orangered;
+			}
+			#content #c4{
+				height: 490px;
+			}
+			#c4 #spot{
+				height: 33px;
+				line-height: 33px;
+				background-image: url(img/tjjd.jpg);
+				background-repeat: no-repeat;
+				padding-left: 35px;
+				font-size: 16px;
+				border-bottom: 3px solid darkgray;
+			}
+			#c4 #spot1 ul li img{
+				width: 240px;
+				height: 168px;
+			}
+			#c4 #spot1 ul{
+				margin-left: 13px;
+				height: 430px;
+			}
+			#c4 #spot1 ul li{
+				color: gray;
+				margin-top: 10px;
+				width: 245px;
+				height: 200px;
+				font-size: 10px;
+				float: left;
+			}
+			#c4 #spot1 ul li span{
+				font-size: 12px;
+				font-weight: bold;
+				color: green;
+			}
+			#c4 #spot2{
+				height: 25px;
+			}
+			#c4 #spot2 ul{
+				width: 198px;
+				height: 25px;
+				line-height: 15px;
+				float: right;
+			}
+			#c4 #spot2 ul li{
+				float: left;
+				margin-left: 15px;
+			}
+			#c4 #spot2 ul li a{
+				color: gray;
+				font-size: 12px;
+			}
+			.active{
+				background-image: url(img/bg.jpg);
+				height: 35px;
+			}
+		</style>
+	</head>
+	<body>
+		<iframe src="title.html" width="100%" height="226" frameborder="0" scrolling="no"></iframe>
+		<div id="content">
+			<div id="c1">
+				<div id="hot">
+					<ul>
+						<li><a href="#">当月景点推荐</a></li>
+						<li><a href="#">武汉欢乐谷|海洋世界</a></li>
+						<li><a href="#">武汉热门景点</a></li>
+						<li><a href="#">黄鹤楼|海洋世界</a></li>
+						<li><a href="#">咸宁热门景点</a></li>
+						<li><a href="#">咸宁温泉|九宫山</a></li>
+						<li><a href="#">宜昌热门景点</a></li>
+						<li><a href="#">三峡大坝|当阳</a></li>
+						<li><a href="#">热门景点酒店</a></li>
+						<li><a href="#">武汉景点酒店|宜昌景点酒店</a></li>
+					</ul>
+				</div>
+				<div id="roll">
+					<ul id="picList">
+						<li><img src="img/jn1.jpg"/></li>
+						<li><img src="img/jn2.jpg"/></li>
+						<li><img src="img/jn3.jpg"/></li>
+						<li><img src="img/jn4.jpg"/></li>
+						<li><img src="img/jn5.jpg"/></li>
+						<li><img src="img/jn6.jpg"/></li>
+						<li><img src="img/jn7.jpg"/></li>
+						<li><img src="img/jn8.jpg"/></li>
+						<li><img src="img/jn9.jpg"/></li>
+						<li><img src="img/jn10.jpg"/></li>
+					</ul>
+					<ul id="picNo">
+						<li class="active"><a href="#">丽江千古情</a></li>
+						<li><a href="#">错峰出游抄</a></li>
+						<li><a href="#">妇女节特辑</a></li>
+						<li><a href="#">三亚自由行</a></li>
+						<li><a href="#">踏青至福建</a></li>
+						<li><a href="#">新云南心旅</a></li>
+						<li><a href="#">东北特色游</a></li>
+						<li><a href="#">张家界风情</a></li>
+						<li><a href="#">三亚特价抄</a></li>
+						<li><a href="#">洛阳牡丹节</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="c2">
+				<div id="zx">
+					<span>最新活动</span>
+				</div>
+				<div id="zx1">
+					<ul>
+						<li><img src="img/typeact1.jpg"/>时间：2014.3.8-4.5</li>
+						<li><img src="img/typeact2.jpg"/>时间：2014.3.6-5.5</li>
+						<li><img src="img/typeact3.jpg"/>时间：2014.5.8-6.5</li>
+						<li><img src="img/typeact4.jpg"/>时间：2014.4.8-4.20</li>
+						<li><img src="img/typeact5.jpg"/>时间：2014.5.12-6.5</li>
+						<li><img src="img/typeact6.jpg"/>时间：2014.2.8-5.5</li>
+						<li><img src="img/typeact7.jpg"/>时间：2014.3.6-4.5</li>
+						<li><img src="img/typeact8.jpg"/>时间：2014.2.8-3.15</li>
+						<li><img src="img/typeact9.jpg"/>时间：2014.4.8-4.20</li>
+						<li><img src="img/typeact10.jpg"/>时间：2014.3.12-4.5</li>
+					</ul>
+				</div>
+			</div>
+			<div id="c3">
+				<div id="sdf">
+					 今日景点团购
+				</div>
+				<div id="sdf1">
+					<ul>
+						<li><img src="img/jrtg.jpg"/></li>
+						<li>
+							<p>&nbsp;(团购)上海国际赛车场风洞亲子体验中心套装</p>
+							<p>团购价<a href="#">￥556</a>&nbsp;节省230</p>
+							<p><img src="img/qg.jpg"/></p>
+						</li>
+						<li><img src="img/jrtg1.png"/></li>
+						<li>
+							<p>&nbsp;(团购)【买一送一】昆明、大理、丽江木府双飞6日游</p>
+							<p>团购价<a href="#">￥1199</a>&nbsp;节省1301</p>
+							<p><img src="img/qg.jpg"/></p>
+						</li>
+						<li><img src="img/jrtg2.png"/></li>
+						<li>
+							<p>&nbsp;(团购)昆明、大理、丽江双飞6日游</p>
+							<p>团购价<a href="#">￥1760</a>&nbsp;节省920</p>
+							<p><img src="img/qg.jpg"/></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="c4">
+				<div id="spot">
+					推荐景点
+				</div>
+				<div id="spot1">
+					<ul>
+						<li>
+							<img src="img/tj1.jpg"/>
+							<span>推荐理由：</span>最具代表性的桂林旅游路线&nbsp;，4天形成囊括最精华、最具观赏的景点!
+						</li>
+						<li>
+							<img src="img/tj2.png"/>
+							<span>推荐理由：</span>赠送机场至酒店往返接送&nbsp;，4晚市区丽思华美达酒店河景房!
+						</li>
+						<li>
+							<img src="img/tj3.jpg"/>
+							<span>推荐理由：</span>入住分界洲岛雨林海景鸟巢独栋别墅一晚无敌海景&nbsp;，亚龙湾环球城大酒店两晚!
+						</li>
+						<li>
+							<img src="img/tj4.png"/>
+							<span>推荐理由：</span>提前10天报名优惠100元/成人
+						</li>
+						<li>
+							<img src="img/tj5.png"/>
+							<span>推荐理由：</span>宿三亚湾一线海景挂五度假酒店&nbsp;，私家通道直达沙滩!
+						</li>
+						<li>
+							<img src="img/tj6.png"/>
+							<span>推荐理由：</span>亚龙湾一线海边酒店&nbsp;，在别致和奢华中享受无处可藏的美景!
+						</li>
+						<li>
+						<img src="img/tj7.png"/>
+							<span>推荐理由：</span>三亚湾看海效果最好的酒店——离海最近&nbsp;，直面180度无敌海景!
+						</li>
+						<li>
+							<img src="img/tj8.jpg"/>
+							<span>推荐理由：</span>赠送接机&nbsp;，鼓浪屿手绘地图1份+鼓浪屿明星片1份!
+						</li>
+					</ul>
+				</div>
+				<div id="spot2">
+					<ul>
+						<li><a href="main.html">首页</a></li>
+						<li><a href="#">上一页</a></li>
+						<li><a href="#">下一页</a></li>
+						<li><a href="#">尾页</a></li>
+					</ul>
+				</div>	
+			</div>
+		</div>
+		<iframe src="foot.html" width="100%" height="56" frameborder="0" scrolling="no"></iframe>
+		<script type="text/javascript">
+			var index=0;
+			var stop=false;
+			function turnPic(){
+				if(stop)
+					return;
+				index++;
+				if(index>9){
+					index=0;
+				}
+				$("#picList li").eq(index).stop().fadeIn().siblings().stop().fadeOut();
+				$("#picNo li").eq(index).addClass("active").siblings().removeClass("active");
+			}
+			$(function(){
+				setInterval("turnPic()",2000);
+				$("#picNo li").mouseover(function(){
+					stop=true;
+					index=$(this).index();
+					$("#picList li").eq(index).stop().fadeIn().siblings().stop().fadeOut();
+					$("#picNo li").eq(index).addClass("active").siblings().removeClass("active");
+				})
+				$("#picNo li").mouseout(function(){
+					stop=false;
+				})
+			})
+		</script>
+	</body>
+</html>

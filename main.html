@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style-type: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			#content{
+				width: 1003px;
+				height: 1121px;
+				margin: 5px auto;
+				border-bottom: 1px solid darkgray;
+			}
+			#left{
+				width: 270px;
+				height: 1120px;
+				float: left;
+			}
+			#left #first{
+				width: 270px;
+				height: 450px;
+				background-image: url(img/conl.jpg);
+			}
+			#left #first1{
+				height: 40px;
+			}
+			#left #first2{
+				width: 250px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			#left #first2 ul{
+				margin-left: 30px;
+				width: 210px;
+				height: 50px;
+			}
+			#left #first2 ul li{
+				text-align: left;
+				height: 25px;
+				line-height: 25px;
+				width: 70px;
+				float: left;
+				font-size: 6px;
+			}
+			#left #first2 ul li a{
+				color: black;
+			}
+			#left #first2 p{
+				width: 248px;
+				height: 34px;
+				line-height: 34px;
+				font-weight: bold;
+				font-size: 15px;
+				margin-top: 10px;
+			}
+			#left #secound{
+				border: 6px solid #c7f0b8;
+				width: 258px;
+				height: 640px;
+				margin-top: 10px;
+			}
+			#left #secound ul{
+				margin-left: 10px;
+				width: 270px;
+				height: 60px;
+			}
+			#left #secound ul li{
+				text-align: left;
+				height: 25px;
+				line-height: 25px;
+				width: 90px;
+				float: left;
+				font-size: 6px;
+			}
+			#left #secound ul li a{
+				color: black;
+			}
+			#left #secound1{
+				width: 248px;
+				margin: 0 auto;
+			}
+			#right{
+				float: left;
+				margin-left: 10px;
+				width: 723px;
+				height: 1120px;
+			}
+			#right1{
+				height: 280px;
+			}
+			#right2{
+				height: 189px;
+			}
+			#right3{
+				height: 651px;
+				border:  1px solid darkgray;
+			}
+			#right1 #roll{
+				float: left;
+				width: 540px;
+				height: 280px;
+				position: relative;
+			}
+			#roll #picList{
+				width: 540px;
+				height: 240px;
+				overflow: hidden;
+			}
+			#picList img,#picList li{
+				width: 540px;
+				height: 240px;
+				cursor: pointer;
+			}
+			#roll #picNo{
+				position: absolute;
+				left: 200px;
+				bottom: 10px;
+			}
+			#roll #picNo li{
+				font-size: 6px;
+				width: 15px;
+				height: 15px;
+				line-height: 15px;
+				float: left;
+				margin-left: 15px;
+				text-align: center;
+				border: 1px solid gray;
+				cursor: pointer;
+			}
+			#right1 #login{
+				float: left;
+				margin-left: 9px;
+				width: 174px;
+				height: 280px;
+			}
+			#right1 #login ul{
+				width: 174px;
+				height: 36px;
+			}
+			#right1 #login ul li{
+				width: 85px;
+				height: 36px;
+				float: left;
+			}
+			#right1 #login ul li:last-child{
+				margin-left: 3px;
+			}
+			#login #sat{
+				border: 1px solid darkgray;
+				width: 172px;
+				height: 190px;
+				margin-top: 12px;
+				font-size: 6px;
+				text-align: center;
+			}
+			#sat .sa1{
+				width: 173px;
+				height: 80px;
+				line-height: 80px;
+			}
+			#sat .sa2{
+				width: 163px;
+				height: 25px;
+				margin: 0 auto;
+				border-bottom: 1px solid darkgray;
+			}
+			#sat .cls{
+				width: 170px;
+				height: 60px;
+				line-height: 50px;
+				background-image: url(img/cls.jpg);
+				display: block;
+				margin-left: 10px;
+				background-repeat: no-repeat;	
+			}
+			#sat .cls a{
+				font-size: 14px;
+				color: black;
+			}
+			#roll #picNo li.active{
+				border: 1px solid orange;
+			}
+			#right2 #g1{
+				height: 39px;
+				background-image: url(img/tgj.jpg);
+			}
+			#right2 #g2{
+				font-size: 10px;
+				height: 146px;
+				border: 1px solid darkgray;
+				border-top: 3px solid forestgreen;
+				overflow: hidden;
+			}
+			#right2 #g2 img{
+				width: 158px;
+				height: 85px;
+			}
+			#right2 #g2 > dl{
+				width: 1000px;
+			}
+			#right2 #g2 > dl > dl{
+				color: black;
+				width: 178px;
+				height: 126px;
+				border-right: 1px solid darkgray;
+				float: left;
+				text-align: center;
+				margin-top: 10px;
+			}
+			#right3 ul:nth-child(1){
+				height: 42px;
+				width: 721px;
+				background-image: url(img/menu.jpg);
+			}
+			#right3 li span:nth-child(1){
+				display: block;
+				width: 130px;
+				height: 89px;
+				float: left;
+				color: darkgray;
+			}
+			#right3 li span:nth-child(2){
+				display: block;
+				width: 440px;
+				height: 89px;
+				float: left;
+				margin-left: 10px;
+				color: darkgray;
+			}
+			#right3 li span:nth-child(2) p:nth-child(1){
+				height: 30px;
+				font-weight: bold;
+				font-size: 16px;
+				color: blue;
+			}
+			#right3 li span:nth-child(2) p:nth-child(2){
+				height: 34px;
+				color: black;
+			}
+			#right3 li span:nth-child(2) p:nth-child(3) a{
+				color: coral;
+			}
+			#right3 li span:nth-child(3){
+				width: 120px;
+				height: 25px;
+				color: coral;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: right;
+				padding-top: 20px;
+				float: left;
+			}
+			
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+			.more{
+				float: right;
+				font-size: 10px;
+				height: 39px;
+				line-height: 43px;
+				color: gray;
+			}
+			.d1{
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.coral{
+				font-weight: bold;
+				font-size: 14px;
+				color: coral;
+			}
+			ul.u1 li{
+				width: 180px;
+				height: 42px;
+				line-height: 42px;
+				text-align: center;
+				color: white;
+				font-size: 20px;
+				float: left;
+			}
+			ul.u2 li{
+				font-size: 6px;
+				width: 703px;
+				height: 89px;
+				margin-left: 10px;
+				margin-top: 10px;
+				border-bottom: 1px dashed darkgray;
+				
+			}
+			ul.u2 li img{
+				width: 130px;
+				height: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tule">
+			<iframe src="title.html" width="100%" height="226" frameborder="0" scrolling="no"></iframe>
+			<div id="content">
+				<div id="left">
+					<div id="first">
+						<div id="first1">
+						</div>
+						<div id="first2">	
+						<p style="background-image: url(img/jn.jpg);">&emsp;&emsp;&nbsp;境内游</p>
+						<ul>
+							<li><a href="#">凤凰古城</a></li>
+							<li><a href="#">云南大理</a></li>
+							<li><a href="#">昆明</a></li>
+							<li><a href="#">丽江</a></li>
+							<li><a href="#">西双版纳</a></li>
+							<li><a href="#">九寨沟</a></li>
+						</ul>
+						<p style="background-image: url(img/jw.jpg);">&emsp;&emsp;&nbsp;境外游</p>
+						<ul>
+							<li><a href="#">奥地利</a></li>
+							<li><a href="#">马尔代夫</a></li>
+							<li><a href="#">夏威夷</a></li>
+							<li><a href="#">美国</a></li>
+							<li><a href="#">瑞士</a></li>
+							<li><a href="#">英国</a></li>
+						</ul>
+						<p style="background-image: url(img/hd.jpg);">&emsp;&emsp;&nbsp;海岛游</p>
+						<ul>
+							<li><a href="#">北海道</a></li>
+							<li><a href="#">巴厘岛</a></li>
+							<li><a href="#">曼谷</a></li>
+							<li><a href="#">普吉岛</a></li>
+							<li><a href="#">塞班岛</a></li>
+							<li><a href="#">香港岛</a></li>
+						</ul>
+						<p style="background-image: url(img/zj.jpg);">&emsp;&emsp;&nbsp;自驾游</p>
+						<ul>
+							<li><a href="#">张家界</a></li>
+							<li><a href="#">武当山</a></li>
+							<li><a href="#">黄山</a></li>
+							<li><a href="#">木兰天池</a></li>
+							<li><a href="#">庐山</a></li>
+							<li><a href="#">农耕年华</a></li>
+						</ul>
+						</div>
+					</div>
+					<div id="secound">
+					<img src="img/yr.jpg"/>
+					<ul>
+						<li><a href="#">古琴台</a></li>
+						<li><a href="#">黄鹤楼</a></li>
+						<li><a href="#">海洋世界</a></li>
+						<li><a href="#">武汉东湖</a></li>
+						<li><a href="#">木兰天地</a></li>
+						<li><a href="#">汉正街</a></li>
+						<li><a href="#">坝子岭</a></li>
+						<li><a href="#">武汉欢乐谷</a></li>
+					</ul>
+					<img src="img/lr.jpg"/>
+					<ul>
+						<li><a href="#">澳门</a></li>
+						<li><a href="#">烟台</a></li>
+						<li><a href="#">仰光</a></li>
+						<li><a href="#">约旦</a></li>
+						<li><a href="#">伊朗</a></li>
+						<li><a href="#">德国</a></li>
+						<li><a href="#">缅甸</a></li>
+						<li><a href="#">希腊</a></li>
+					</ul>
+					<img src="img/sr.jpg"/>
+					<ul>
+						<li><a href="#">北京</a></li>
+						<li><a href="#">上海</a></li>
+						<li><a href="#">加拿大</a></li>
+						<li><a href="#">香港</a></li>
+						<li><a href="#">海南</a></li>
+						<li><a href="#">马尔代夫</a></li>
+						<li><a href="#">福建</a></li>
+						<li><a href="#">韩国</a></li>
+					</ul>
+					<div id="secound1">
+						<img src="img/bb1.jpg"/>
+						<img src="img/bb2.jpg"/>
+						<img src="img/bb3.jpg"/>	
+					</div>
+					</div>
+				</div>
+				<div id="right">
+					<div id="right1">
+						<div id="roll">
+							<ul id="picList">
+								<li><img src="img/tg.jpg"/></li>
+								<li><img src="img/tg2.jpg"/></li>
+								<li><img src="img/tg3.jpg"/></li>
+								<li><img src="img/tg4.jpg"/></li>
+							</ul>
+							<ul id="picNo">
+								<li class="active">1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+							</ul>
+						</div>
+						<div id="login">
+							<ul>
+								<li><a href="login.html"><img src="img/dl.jpg"/></a></li>
+								<li><a href="register.html"><img src="img/zc.jpg"/></a></li>
+							</ul>
+							<div id="sat">
+								<p class="sa1"><span style="color: coral;font-size: 50px;">96%</span>满意度<br /></p>
+								<p class="sa2">已有<span style="color: coral;">1413520</span>人预定出游</p>
+								<span class="cls">&emsp;&emsp;<a href="#">查看历史订单</a></span>
+							</div>
+						</div>
+					</div>
+ 					<div id="right2">
+						<div id="g1">
+							<span class="more">更多旅游特价> ></span>
+						</div>
+						<div id="g2">
+							<dl>
+								<dl>
+								<dt><img src="img/scroll1.jpg"/></a></dt>
+								<dd class="d1">比基尼海滩终生游</dd>
+								<dd><span class="coral">￥520</span>起&nbsp;原价18999</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/scroll2.jpg"/></dt>
+								<dd class="d1">康康家三日游</dd>
+								<dd><span class="coral">￥131521</span>起&nbsp;原价1351354</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/scroll3.jpg"/></dt>
+								<dd class="d1">夏威夷六日游</dd>
+								<dd><span class="coral">￥7800</span>起&nbsp;原价17800</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/scroll4.jpg"/></dt>
+								<dd class="d1">厦门四日游</dd>
+								<dd><span class="coral">￥5000</span>起&nbsp;原价7800</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/scroll5.jpg"/></dt>
+								<dd class="d1">迪拜六日游</dd>
+								<dd><span class="coral">￥9700</span>起&nbsp;原价19700</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/scroll6.jpg"/></dt>
+								<dd class="d1">巴厘岛六日游</dd>
+								<dd><span class="coral">￥8280</span>起&nbsp;原价9999</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/scroll7.jpg"/></dt>
+								<dd class="d1">香港四日游</dd>
+								<dd><span class="coral">￥2819</span>起&nbsp;原价6000</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/scroll8.jpg"/></dt>
+								<dd class="d1">土耳其九日游</dd>
+								<dd><span class="coral">￥13099</span>起&nbsp;原价13500</dd>
+							</dl>
+							<dl>
+								<dt><img src="img/scroll9.jpg"/></dt>
+								<dd class="d1">柬埔寨六日游</dd>
+								<dd><span class="coral">￥18899</span>起&nbsp;原价18999</dd>
+							</dl>
+							</dl>
+						</div>
+
+ 					</div>
+					<div id="right3">
+						<ul class="u1">
+							<li>境内游</li>
+							<li>境外游</li>
+							<li>海岛游</li>
+							<li>自驾游</li>
+						</ul>
+						<ul class="u2">
+							<li>
+								<span>
+									<img src="img/cp1.jpg"/>产品编号：135356	
+								</span>
+								<span>
+									<p>[4日游]&emsp;厦门双飞4日游&emsp;交通工具(飞机)</p>
+									<p>简介：住1晚鼓浪屿特色旅馆，1天自由活动</p>
+									<p>本线路已有<a href="#">5144</a>人出游</p>
+								</span>
+								<span>
+									￥1644元/每人
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="img/cp2.jpg"/>产品编号：135398	
+								</span>
+								<span>
+									<p>[5日游]&emsp;海南双飞5日游&emsp;交通工具(飞机)</p>
+									<p>简介：1晚分界洲海景住宿，蜜月专享，恋恋海豚湾</p>
+									<p>本线路已有<a href="#">2</a>人出游</p>
+								</span>
+								<span>
+									￥3517元/每人
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="img/cp3.jpg"/>产品编号：135399	
+								</span>
+								<span>
+									<p>[6日游]&emsp;昆大丽双飞6日游&emsp;交通工具(飞机)</p>
+									<p>简介：[清明]<昆大丽双飞6日游>约惠云南，1晚温泉酒店，减100</p>
+									<p>本线路已有<a href="#">56</a>人出游</p>
+								</span>
+								<span>
+									￥1199元/每人
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="img/cp4.jpg"/>产品编号：135490	
+								</span>
+								<span>
+									<p>[1日游]&emsp;武汉欢乐谷1日游&emsp;交通工具(自驾)</p>
+									<p>简介：中国文化公园第一连锁品牌，创立于1998年，以“打造世界一流的连锁文化公园”为远景，旨在为不同的城市，带来同样的快乐</p>
+									<p>本线路已有<a href="#">56</a>人出游</p>
+								</span>
+								<span>
+									￥170元/每人
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="img/cp5.jpg"/>产品编号：135455	
+								</span>
+								<span>
+									<p>[2日游]&emsp;香港迪士尼2日游&emsp;交通工具(飞机)</p>
+									<p>简介：香港迪士尼乐园(Disneyland,Hong Kong)的面积只有126.82公顷，是全球面积最小的迪斯尼乐园，是世界上的第五个迪士尼乐园</p>
+									<p>本线路已有<a href="#">1526</a>人出游</p>
+								</span>
+								<span>
+									￥55元/每人
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="img/cp6.jpg"/>产品编号：135498	
+								</span>
+								<span>
+									<p>[5日游]&emsp;海南三亚5日游&emsp;交通工具(飞机)</p>
+									<p>简介：<海南三亚国光豪生5日自助游>国际品牌酒店，专享悠闲度假</p>
+									<p>本线路已有<a href="#">569</a>人出游</p>
+								</span>
+								<span>
+									￥2920元/每人
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<iframe src="foot.html" width="100%" height="56" frameborder="0" scrolling="no"></iframe>
+		</div>
+		<script type="text/javascript">
+			var index=0;
+			var marginLeft=0;
+			var stop=false;
+			var stop2=false;
+			function rollPic(){
+				if(stop2)
+					return;
+				$("#g2 > dl > dl:first").stop().animate({"margin-left":--marginLeft+"px"},0,function(){
+					if(-marginLeft>180){
+						marginLeft=0;
+						$("#g2 > dl > dl:first").css("margin-left","0px");
+						$("#g2 > dl > dl:first").stop().remove().appendTo("#g2 > dl");
+					}
+				})
+			}
+			function turnPic(){
+				if(stop)
+					return;
+				index++;
+				if(index>3){
+					index=0;
+				}
+				$("#picList>li").eq(index).stop().fadeIn().siblings().stop().fadeOut();
+				$("#picNo li").eq(index).addClass("active").siblings().removeClass("active");
+			}
+			$(function(){
+				setInterval("turnPic()",2000);
+				setInterval("rollPic()",10);
+				$("#picNo li").mouseover(function(){
+					stop=true;
+					index=$(this).text()-1;
+					$("#picList>li").eq(index).stop().fadeIn().siblings().stop().fadeOut();
+					$("#picNo li").eq(index).addClass("active").siblings().removeClass("active");
+				})
+				$("#picNo li").mouseout(function(){
+					stop=false;
+				})
+				$("#g2 > dl").mouseover(function(){
+					stop2=true;
+				})
+				$("#g2 > dl").mouseout(function(){
+					stop2=false;
+				})
+			})
+		</script>
+	</body>
+</html>
